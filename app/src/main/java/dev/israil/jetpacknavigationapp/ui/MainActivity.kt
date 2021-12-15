@@ -1,9 +1,10 @@
-package dev.israil.jetpacknavigationapp
+package dev.israil.jetpacknavigationapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import dev.israil.jetpacknavigationapp.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +14,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         navController = Navigation.findNavController(this, R.id.my_nav_host_fragment)
-
     }
 }

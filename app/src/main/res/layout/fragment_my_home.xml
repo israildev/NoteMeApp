@@ -1,16 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyHomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.SplashFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Start" />
+   <LinearLayout
+       android:id="@+id/ll"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:orientation="vertical"
+       android:layout_marginTop="100dp"
+       android:layout_marginLeft="16dp"
+       android:layout_marginRight="16dp"
+       app:layout_constraintBottom_toTopOf="@+id/bg"
+       app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+      <TextView
+          android:id="@+id/tv_title"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="parent"
+          android:textSize="35sp"
+          android:textColor="#323232"
+          android:fontFamily="@font/actor"
+          android:text = "Notely"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@+id/tv_title"
+          android:textSize="16sp"
+          android:textColor="#535353"
+          android:fontFamily="@font/actor"
+          android:layout_marginTop="27dp"
+          android:text = "Capture what’s on your mind and get a reminder later at the right place or time. You can also add voice memo and other features"
+          />
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_marginRight="16dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginBottom="40dp">
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:src="@drawable/ic_plus"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintTop_toTopOf="@+id/btn_start"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_start"
+            app:layout_constraintLeft_toRightOf="@+id/btn_start"/>
+
+         <Button
+             android:id="@+id/btn_start"
+             android:layout_width="160dp"
+             android:layout_height="wrap_content"
+             android:background="@drawable/rounded_btn_bg"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"
+             android:text="Let's Start"
+             />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+
+
+
+   <ImageView
+       android:id="@+id/bg"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:scaleType="centerCrop"
+       android:src="@drawable/ic_group_1"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

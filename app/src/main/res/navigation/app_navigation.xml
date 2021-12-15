@@ -2,17 +2,17 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:startDestination="@id/myHomeFragment"
+    app:startDestination="@id/mySplashFragment"
     android:id="@+id/app_navigation">
 
     <fragment
-        android:id="@+id/myHomeFragment"
-        android:name="dev.israil.jetpacknavigationapp.MyHomeFragment"
-        android:label="fragment_my_home"
+        android:id="@+id/mySplashFragment"
+        android:name="dev.israil.jetpacknavigationapp.ui.SplashFragment"
+        android:label="fragment_splash"
         tools:layout="@layout/fragment_my_home">
 
         <action android:id="@+id/action_myHomeFragment_to_mySecondFragment"
-            app:destination="@id/mySecondFragment"
+            app:destination="@id/notesListFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -20,13 +20,13 @@
 
     </fragment>
 
-    <fragment android:id="@+id/mySecondFragment"
-        android:name="dev.israil.jetpacknavigationapp.MySecondFragment"
-        android:label="fragment_my_second"
+    <fragment android:id="@+id/notesListFragment"
+        android:name="dev.israil.jetpacknavigationapp.ui.NotesListFragment"
+        android:label="fragment_notes_list"
         tools:layout="@layout/fragment_my_second">
 
         <action android:id="@+id/action_mySecondFragment_to_myThirdFragment"
-            app:destination="@id/myThirdFragment"
+            app:destination="@id/addNoteFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -34,16 +34,13 @@
 
     </fragment>
 
-    <fragment android:id="@+id/myThirdFragment"
-        android:name="dev.israil.jetpacknavigationapp.MyThirdFragment"
-        android:label="fragment_my_third"
+    <fragment android:id="@+id/addNoteFragment"
+        android:name="dev.israil.jetpacknavigationapp.ui.AddNoteFragment"
+        android:label="fragment_add_note"
         tools:layout="@layout/fragment_my_third">
-        <action android:id="@+id/action_myThirdFragment_to_myHomeFragment3"
-            app:popUpTo="@id/myHomeFragment"
 
-            />
         <action android:id="@+id/action_myThirdFragment_to_mySecondFragment"
-            app:popUpTo="@id/mySecondFragment"/>
+            app:popUpTo="@id/notesListFragment"/>
 
     </fragment>
 </navigation>
